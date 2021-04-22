@@ -104,7 +104,7 @@ var app = new Vue(
             getCurrentContact(index){
 
                 console.log(index)
-                this.currenIndex = index;
+                this.currentIndex = index;
             },
 		}
 
