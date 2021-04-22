@@ -1,12 +1,19 @@
 /* RESET  */
 *{
-    margin: auto;
-    padding: auto;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 /* COMMON */
+img{
+    width: 100%;
+    border-radius: 50%;
+}
 
+body{
+    font-family: 'Roboto', sans-serif;
+}
 /* STRUCTURE */
 
 #app-wrapper{
@@ -29,4 +36,135 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.sidebar{
+    width: 30%;
+    float: left;
+    height: 100%;
+
+
+    background-color: wheat;
+}
+
+/* top bar  */
+.top-bar{
+    display: flex;
+    height: 100px;
+    background-color: #EAEAEA;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.user-info{
+    display: flex;
+    align-items: center;
+}
+
+.top-avatar{
+    width: 70px;
+}
+
+.top-name{
+    font-size: 20px;
+    font-weight: 700;
+    padding-left: 20px;
+}
+
+.action-icons{
+    color: #B1B1B1;
+    font-size: 20px;
+}
+
+.action-icons span{
+    padding-left: 15px;
+}
+
+/* notifications bar  */
+
+.notifications{
+    height: 110px;
+    background-color: #8EDBFC;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.notif-icon{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: white;
+    color: #8EDBFC;
+    font-size: 30px;
+    position: relative;
+}
+
+.notif-icon i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.notif-change{
+    color: grey;
+    font-size: 15px;
+}
+
+.notif-text{
+    padding-left: 10px;
+}
+
+/* search input  */
+.search-input{
+    height: 50px;
+    background-color: #FAFAFA;
+    padding: 7px;
+}
+
+.search-input input{
+    height: 100%;
+    width: 100%;
+    border: 1px solid #F9F9F9;
+    padding-left: 10px;
+    position: relative;
+}
+
+/* .search-input input:before {
+    font-family: 'FontAwesome';
+    color: #B1B1B1;
+    content: "\f002";
+    position: absolute;
+    left: 10px;
+} */
+
+/* contacts  */
+
+.contacts-nav{
+    background-color: white;
+    height: 100%;
+    overflow: auto;
+}
+
+.contacts{
+    list-style-type: none;
+}
+
+.contact{
+    border-bottom: 1px solid #E9ECEB;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.contact-avatar{
+    width: 80px;
+}
+
+.contact-name{
+    padding-left: 20px;
+    font-weight: 700;
+    font-size: 23px;
 }

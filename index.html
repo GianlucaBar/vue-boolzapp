@@ -8,14 +8,81 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>    
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 </head>
 <body>
     <div id="root">
+        <!-- app wrapper  -->
         <div id="app-wrapper">
             <div class="bg-bar"></div>
-            <div id="main-wrapper"></div>
+
+            <!-- main wrapper  -->
+            <div id="main-wrapper">
+                <!-- sidebar  -->
+                <div class="sidebar">
+                    <!-- top side  -->
+                    <div class="top-bar">
+                        <div class="user-info">
+                            <div class="top-avatar">
+                                <img src="img/avatar_2.jpg" alt="my avatar">
+                            </div>
+
+                            <span class="top-name">Gianluca</span>
+                        </div>
+
+                        <div class="action-icons">
+                            <span><i class="fas fa-circle-notch"></i></span>
+
+                            <span><i class="fas fa-comment-alt"></i></span>
+
+                            <span><i class="fas fa-ellipsis-v"></i></span>
+                        </div>
+                        
+                    </div>
+                    <!-- end top side  -->
+
+                    <!-- notification option  -->
+                    <div class="notifications">
+                        <div class="notif-icon">
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+
+                        <div class="notif-text">
+                            <h3>Ricevi notifiche di nuovi messaggi</h3>
+                            <span> <a class="notif-change" href="#">Attiva notifiche desktop</a></span>
+                        </div>
+                    </div>
+                    <!-- end notification options  -->
+
+                    <!-- search user input  -->
+                    <div class="search-input">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                    <!-- end search user input   -->
+
+                    <!-- contacts  -->
+                    <div class="contacts-nav">
+                        <ul class="contacts">
+                            <li class="contact" v-for="contact in contacts">
+                                <div class="contact-avatar">
+                                    <img :src="getAvatar(contact)" alt="">
+                                </div>
+                
+                                <span class="contact-name">
+                                    {{ contact. name }}
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- end contacts  -->
+                </div>
+                <!-- end sidebar  -->
+            </div>
+            <!-- main wrapper  -->
         </div>
+        <!-- end app wrapper  -->
     </div>
 
     <script src="js/script.js"></script>
