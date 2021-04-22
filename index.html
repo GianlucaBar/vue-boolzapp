@@ -106,49 +106,15 @@
                     </div>
 
                     <div class="chat-area">
-                        <div class="chat-container clearfix">
-                            <div class="message message-recieved">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo qui voluptas architecto, ex saepe officia expedita ad odit nulla voluptatum ut possimus, ratione placeat tempora? Vitae totam cumque laboriosam commodi.
-                            </div>
+                        <div class="chat-container">
 
-                            <div class="message message-sent">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo qui voluptas architecto, ex saepe officia expedita ad odit nulla voluptatum ut possimus, ratione placeat tempora? Vitae totam cumque laboriosam commodi.
+                            <div v-for="message in contacts[0].messages" class="message-container clearfix">
+                                <div class="message" :class="getMessageStatus(message)">
+                                    <span class="message-text"> {{ message.text }}</span>
+                                    <span class="message-time"> {{ message.date }}</span>
+                                </div>
                             </div>
-
-                            <div class="message message-recieved">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo qui voluptas architecto, ex saepe officia expedita ad odit nulla voluptatum ut possimus, ratione placeat tempora? Vitae totam cumque laboriosam commodi.
-                            </div>
-
-                            <div class="message message-sent">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo qui voluptas architecto, ex saepe officia expedita ad odit nulla voluptatum ut possimus, ratione placeat tempora? Vitae totam cumque laboriosam commodi.
-                            </div>
-
-                            <div class="message message-recieved">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo qui voluptas architecto, ex saepe officia expedita ad odit nulla voluptatum ut possimus, ratione placeat tempora? Vitae totam cumque laboriosam commodi.
-                            </div>
-
-                            <div class="message message-sent">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo qui voluptas architecto, ex saepe officia expedita ad odit nulla voluptatum ut possimus, ratione placeat tempora? Vitae totam cumque laboriosam commodi.
-                            </div>
-
-                            <div class="message message-recieved">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo qui voluptas architecto, ex saepe officia expedita ad odit nulla voluptatum ut possimus, ratione placeat tempora? Vitae totam cumque laboriosam commodi.
-                            </div>
-
-                            <div class="message message-sent">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo qui voluptas architecto, ex saepe officia expedita ad odit nulla voluptatum ut possimus, ratione placeat tempora? Vitae totam cumque laboriosam commodi.
-                            </div>
-
-                            <div class="message message-recieved">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo qui voluptas architecto, ex saepe officia expedita ad odit nulla voluptatum ut possimus, ratione placeat tempora? Vitae totam cumque laboriosam commodi.
-                            </div>
-
-                            <div class="message message-sent">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo qui voluptas architecto, ex saepe officia expedita ad odit nulla voluptatum ut possimus, ratione placeat tempora? Vitae totam cumque laboriosam commodi.
-                            </div>
-
-                            
-                            
+        
                         </div>
                     </div>
 

@@ -234,24 +234,37 @@ main{
 
 /* chat area  */
 .chat-container{
-    background-color: thistle;
     padding: 40px;
     width: 100%;
 }
 
 .message{
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 20px 10px;
+    border-radius: 10px;
     background-color: white;
-    max-width: 400px;
+    width: 400px;
     margin-top: 10px;
+    position: relative;
+}
+
+.message-container{
+    width: 100%;
 }
 
 .message-recieved{
-    /* float: left; */
+    float: left;
 }
 
 .message-sent{
     background-color: #D5F9BA;
     float: right;
+}
+
+
+.message-time{
+    font-size: 10px;
+    color: #BBC3BB; 
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
 }

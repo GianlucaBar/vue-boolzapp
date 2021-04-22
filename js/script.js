@@ -94,6 +94,12 @@ var app = new Vue(
             getAvatar(contact) {
                 console.log(contact.avatar)
                 return 'img/avatar' + contact.avatar + '.jpg';
-              }
+            },
+
+            getMessageStatus(message){
+                console.log(message.status);
+                return 'message-' + message.status
+                
+            }
 		}
     });
