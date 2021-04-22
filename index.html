@@ -65,7 +65,7 @@
                     <!-- contacts  -->
                     <div class="contacts-nav">
                         <ul class="contacts">
-                            <li class="contact" v-for="contact in contacts">
+                            <li class="contact" v-for="(contact, index) in contacts" @click="getCurrentContact(contact, index)">
                                 <div class="contact-avatar">
                                     <img :src="getAvatar(contact)" alt="">
                                 </div>
@@ -85,11 +85,11 @@
                     <div class="main top-bar">
                         <div class="user-info">
                             <div class="top-avatar">
-                                <img src="img/avatar_3.jpg" alt="my avatar">
+                                <img :src="getAvatar(currentContact)" alt="my avatar">
                             </div>
 
                             <div class="current-contact">
-                                <div class="current-name">Samuele</div>
+                                <div class="current-name">{{ currentContact.name }}</div>
                                 <div class="small-text">Ultimo accesso oggi alle</div>
                             </div>
 
@@ -108,10 +108,10 @@
                     <div class="chat-area">
                         <div class="chat-container">
 
-                            <div v-for="message in contacts[0].messages" class="message-container clearfix">
+                            <div v-for="message in currentContact.messages" class="message-container clearfix">
                                 <div class="message" :class="getMessageStatus(message)">
-                                    <span class="message-text"> {{ message.text }}</span>
-                                    <span class="message-time"> {{ message.date }}</span>
+                                    <span class="message-text"> {{ message.text }} </span>
+                                    <span class="message-time"> {{ message.date }} </span>
                                 </div>
                             </div>
         

@@ -3,6 +3,10 @@ var app = new Vue(
         el: '#root',
 
         data: {
+            currentContact: {
+            
+            },
+            currentIndex: 0,
 			contacts: [
                 {
                     name: 'Michele',
@@ -92,14 +96,27 @@ var app = new Vue(
 
         methods: {
             getAvatar(contact) {
-                console.log(contact.avatar)
                 return 'img/avatar' + contact.avatar + '.jpg';
             },
 
             getMessageStatus(message){
-                console.log(message.status);
                 return 'message-' + message.status
                 
-            }
+            },
+
+            getCurrentContact(contact, index){
+
+                this.currentContact = contact;
+                this.currenIndex = index;
+            },
+
+            // getFirstContact(){
+            //     this.currentContact = this.contacts[0];
+            // }
+		},
+
+        created() {
+            alert('funzioona')
+			// getFirstContact()
 		}
     });
