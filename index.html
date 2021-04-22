@@ -65,7 +65,7 @@
                     <!-- contacts  -->
                     <div class="contacts-nav">
                         <ul class="contacts">
-                            <li class="contact" v-for="(contact, index) in contacts" @click="getCurrentContact(contact, index)">
+                            <li class="contact" v-for="(contact, index) in contacts" @click="getCurrentContact(index)">
                                 <div class="contact-avatar">
                                     <img :src="getAvatar(contact)" alt="">
                                 </div>
@@ -85,11 +85,11 @@
                     <div class="main top-bar">
                         <div class="user-info">
                             <div class="top-avatar">
-                                <img :src="getAvatar(currentContact)" alt="my avatar">
+                                <img :src="getAvatar(contacts[currentIndex])" alt="my avatar">
                             </div>
 
                             <div class="current-contact">
-                                <div class="current-name">{{ currentContact.name }}</div>
+                                <div class="current-name">{{ contacts[currentIndex].name }}</div>
                                 <div class="small-text">Ultimo accesso oggi alle</div>
                             </div>
 
@@ -108,7 +108,7 @@
                     <div class="chat-area">
                         <div class="chat-container">
 
-                            <div v-for="message in currentContact.messages" class="message-container clearfix">
+                            <div v-for="message in contacts[currentIndex].messages" class="message-container clearfix">
                                 <div class="message" :class="getMessageStatus(message)">
                                     <span class="message-text"> {{ message.text }} </span>
                                     <span class="message-time"> {{ message.date }} </span>

@@ -3,9 +3,6 @@ var app = new Vue(
         el: '#root',
 
         data: {
-            currentContact: {
-            
-            },
             currentIndex: 0,
 			contacts: [
                 {
@@ -104,19 +101,11 @@ var app = new Vue(
                 
             },
 
-            getCurrentContact(contact, index){
+            getCurrentContact(index){
 
-                this.currentContact = contact;
+                console.log(index)
                 this.currenIndex = index;
             },
-
-            // getFirstContact(){
-            //     this.currentContact = this.contacts[0];
-            // }
-		},
-
-        created() {
-            alert('funzioona')
-			// getFirstContact()
 		}
+
     });
