@@ -65,6 +65,7 @@
                     <!-- contacts  -->
                     <div class="contacts-nav">
                         <ul class="contacts">
+
                             <li class="contact" v-for="(contact, index) in contacts"
                             @click="getCurrentContact(index)"
                             :class="{'active': currentIndex == index }"
@@ -111,9 +112,16 @@
                     <div class="chat-area">
                         <div class="chat-container">
 
-                                <div v-for="message in contacts[currentIndex].messages" class="message" :class="getMessageStatus(message)">
+                                <div v-for="(message, index) in contacts[currentIndex].messages"
+                                class="message" :class="getMessageStatus(message)"
+                                @click="toggleChevron(message)">
                                     <span class="message-text"> {{ message.text }} </span>
                                     <span class="message-time"> {{ message.date }} </span>
+                                    <span v-if="message.chevron" @click="toggleDropdown(message)"><i class="fas fa-chevron-down"></i></span>
+                                    <div v-if="message.dropDown" class="dropdown">
+                                        <div>Info messaggio</div>
+                                        <div>Cancella messaggio</div>
+                                    </div>
                                 </div>
                                 
                         </div>
