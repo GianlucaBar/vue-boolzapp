@@ -280,7 +280,23 @@ main{
 }
 
 .dropdown{
+    text-align: right;
     position: absolute;
-    border: 1px solid black;
-    bottom: -100%
+    bottom: -130%;
+    right: 0;
+    background-color: white; 
+    box-shadow: 1px 3px 10px 5px rgba(0,0,0,0.2);;
+    padding: 20px;
+}
+
+.del-message{
+    cursor: pointer;
+}
+
+.chevron{
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    bottom: 30%;
+    color: #6A7376;
 }

@@ -180,6 +180,12 @@ var app = new Vue(
             toggleChevron(message){
                 message.chevron = !message.chevron;
                 
+            },
+
+            deleteMessage(index){
+
+                this.contacts[this.currentIndex].messages.splice(index, 1);
+        
             }
 		}
 

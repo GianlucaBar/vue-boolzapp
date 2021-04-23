@@ -117,10 +117,12 @@
                                 @click="toggleChevron(message)">
                                     <span class="message-text"> {{ message.text }} </span>
                                     <span class="message-time"> {{ message.date }} </span>
-                                    <span v-if="message.chevron" @click="toggleDropdown(message)"><i class="fas fa-chevron-down"></i></span>
+                                    <span class="chevron" v-if="message.chevron" @click="toggleDropdown(message)">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </span>
                                     <div v-if="message.dropDown" class="dropdown">
                                         <div>Info messaggio</div>
-                                        <div>Cancella messaggio</div>
+                                        <div class="del-message" @click="deleteMessage(index)">Cancella messaggio</div>
                                     </div>
                                 </div>
                                 
