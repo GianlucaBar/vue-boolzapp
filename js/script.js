@@ -4,6 +4,8 @@ var app = new Vue(
 
         data: {
             currentIndex: 0,
+            userFilter: '',
+            newReply: '',
 			contacts: [
                 {
                     name: 'Michele',
@@ -102,10 +104,46 @@ var app = new Vue(
             },
 
             getCurrentContact(index){
-
-                console.log(index)
                 this.currentIndex = index;
             },
+
+            filterContacts(){
+				this.contacts.forEach(contact => {
+					if(contact.name.toLowerCase().includes(this.userFilter.toLowerCase())){
+						contact.visible = true;
+					} else{
+						contact.visible = false;
+					}
+				});
+			},
+
+            addNewReply(){
+                if (this.newReply.length > 0 ){
+					this.contacts[this.currentIndex].messages.push(
+                        {
+                            date: 'ora',
+                            text: this.newReply,
+                            status: 'sent'
+                        }
+                    );
+
+					this.newReply = '';
+
+                    setTimeout(this.autoReply, 1000);
+			    }
+                
+			},
+
+
+            autoReply(){
+                this.contacts[this.currentIndex].messages.push(
+                    {
+                        date: 'ora',
+                        text: 'ok',
+                        status: 'received'
+                    }
+                );
+            }
 		}
 
     });

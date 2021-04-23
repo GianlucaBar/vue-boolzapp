@@ -58,7 +58,7 @@
 
                     <!-- search user input  -->
                     <div class="search-input">
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" v-model="userFilter" placeholder="Cerca o inizia una nuova chat" @keyup="filterContacts">
                     </div>
                     <!-- end search user input   -->
 
@@ -66,7 +66,8 @@
                     <div class="contacts-nav">
                         <ul class="contacts">
                             <li class="contact" v-for="(contact, index) in contacts"
-                            @click="getCurrentContact(index)" :class=" 'active': index == currentIndex ">
+                            @click="getCurrentContact(index)"
+                            v-if="contact.visible">
                                 <div class="contact-avatar">
                                     <img :src="getAvatar(contact)" alt="">
                                 </div>
@@ -113,7 +114,7 @@
                                     <span class="message-text"> {{ message.text }} </span>
                                     <span class="message-time"> {{ message.date }} </span>
                                 </div>
-                            
+                                
                         </div>
                     </div>
 
@@ -123,7 +124,7 @@
                         </div>
 
                         <div class="chat-input">
-                            <input type="text" placeholder="Scrivi un messaggio">
+                            <input type="text" placeholder="Scrivi un messaggio" v-model='newReply' @keyup.enter="addNewReply">
                         </div>
 
                         <div class="mic-icon">
