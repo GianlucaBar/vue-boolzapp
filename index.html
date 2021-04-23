@@ -67,6 +67,7 @@
                         <ul class="contacts">
                             <li class="contact" v-for="(contact, index) in contacts"
                             @click="getCurrentContact(index)"
+                            :class=" 'active': currentIndex == index "
                             v-if="contact.visible">
                                 <div class="contact-avatar">
                                     <img :src="getAvatar(contact)" alt="">
