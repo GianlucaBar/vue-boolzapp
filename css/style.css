@@ -41,6 +41,7 @@ body{
 
 #main-wrapper{
     width: 90%;
+    min-width: 1100px;
     height: 95%;
     background-color: white;
     position: absolute;
@@ -54,12 +55,14 @@ body{
     float: left;
     height: 100%;
     background-color: white;
+    display: flex;
+    flex-direction: column;
 }
 
 main{
     width: 70%;
     height: 100%;
-    float: right;
+    float: left;
 }
 
 .chat-area{
@@ -179,10 +182,12 @@ main{
 
 .contacts-nav{
     background-color: white;
+    overflow: auto;
 }
 
 .contacts{
     list-style-type: none;
+    flex-grow: 1;
 }
 
 .contact{
@@ -190,6 +195,10 @@ main{
     display: flex;
     align-items: center;
     padding: 10px;
+}
+
+.active{
+    background-color: lightgray;
 }
 
 .contact-avatar{
@@ -245,6 +254,7 @@ main{
     width: 400px;
     margin-top: 10px;
     position: relative;
+    clear: both;
 }
 
 .message-container{

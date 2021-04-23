@@ -65,13 +65,14 @@
                     <!-- contacts  -->
                     <div class="contacts-nav">
                         <ul class="contacts">
-                            <li class="contact" v-for="(contact, index) in contacts" @click="getCurrentContact(index)">
+                            <li class="contact" v-for="(contact, index) in contacts"
+                            @click="getCurrentContact(index)" :class=" 'active': index == currentIndex ">
                                 <div class="contact-avatar">
                                     <img :src="getAvatar(contact)" alt="">
                                 </div>
                 
                                 <span class="contact-name">
-                                    {{ contact. name }}
+                                    {{ contact.name }}
                                 </span>
                             </li>
                         </ul>
@@ -108,13 +109,11 @@
                     <div class="chat-area">
                         <div class="chat-container">
 
-                            <div v-for="message in contacts[currentIndex].messages" class="message-container clearfix">
-                                <div class="message" :class="getMessageStatus(message)">
+                                <div v-for="message in contacts[currentIndex].messages" class="message" :class="getMessageStatus(message)">
                                     <span class="message-text"> {{ message.text }} </span>
                                     <span class="message-time"> {{ message.date }} </span>
                                 </div>
-                            </div>
-        
+                            
                         </div>
                     </div>
 
