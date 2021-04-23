@@ -121,7 +121,7 @@ var app = new Vue(
                 if (this.newReply.length > 0 ){
 					this.contacts[this.currentIndex].messages.push(
                         {
-                            date: 'ora',
+                            date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                             text: this.newReply,
                             status: 'sent'
                         }
@@ -138,7 +138,7 @@ var app = new Vue(
             autoReply(){
                 this.contacts[this.currentIndex].messages.push(
                     {
-                        date: 'ora',
+                        date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                         text: 'ok',
                         status: 'received'
                     }

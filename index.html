@@ -67,7 +67,7 @@
                         <ul class="contacts">
                             <li class="contact" v-for="(contact, index) in contacts"
                             @click="getCurrentContact(index)"
-                            :class=" 'active': currentIndex == index "
+                            :class="{'active': currentIndex == index }"
                             v-if="contact.visible">
                                 <div class="contact-avatar">
                                     <img :src="getAvatar(contact)" alt="">
@@ -140,6 +140,7 @@
         <!-- end app wrapper  -->
     </div>
 
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
