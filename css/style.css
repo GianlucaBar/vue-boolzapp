@@ -47,6 +47,7 @@ img{
 
 body{
     font-family: 'Roboto', sans-serif;
+    color: var(--color);
 }
 
 .small-text{
@@ -142,6 +143,7 @@ main{
     font-size: 20px;
     font-weight: 700;
     padding-left: 20px;
+    color: var(--color);
 }
 
 .action-icons{
@@ -239,6 +241,7 @@ main{
     padding-left: 20px;
     font-weight: 700;
     font-size: 23px;
+    color: var(--color);
 }
 
 
@@ -249,6 +252,7 @@ main{
 .current-name{
     font-size: 20px;
     font-weight: 700;
+    color: var(--color);
 }
 
 .lastMsg{
@@ -300,6 +304,7 @@ main{
     margin-top: 20px;
     position: relative;
     clear: both;
+    color: var(--color);
 }
 
 .message-container{
