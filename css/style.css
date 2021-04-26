@@ -21,6 +21,7 @@
     --icons-color: #BCBEC3;
     --input-color: white;
     --borders-color: #F7F4F2;
+    --drop-down-color: white;
 }
 
 .dark-mode {
@@ -37,6 +38,7 @@
     --icons-color: #BCBEC3;
     --input-color: #363840;
     --borders-color: #363840;
+    --drop-down-color: #1f2124;
 }
 
 /* COMMON */
@@ -335,7 +337,7 @@ main{
     position: absolute;
     bottom: -130%;
     right: 0;
-    background-color: white; 
+    background-color: var(--drop-down-color); 
     box-shadow: 1px 3px 10px 5px rgba(0,0,0,0.2);;
     padding: 20px;
     z-index: 1;
