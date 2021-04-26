@@ -17,22 +17,19 @@ var app = new Vue(
                             date: '10/01/2020 15:30:55',
                             text: 'Hai portato a spasso il cane?',
                             status: 'sent',
-                            dropDown: false,
-                            chevron: false
+                            dropDown: false
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             text: 'Ricordati di dargli da mangiare',
                             status: 'sent',
-                            dropDown: false,
-                            chevron: false
+                            dropDown: false
                         },
                         {
                             date: '10/01/2020 16:15:22',
                             text: 'Tutto fatto!',
                             status: 'received',
-                            dropDown: false,
-                            chevron: false
+                            dropDown: false
                         }
                     ],
                 },
@@ -45,22 +42,19 @@ var app = new Vue(
                             date: '20/03/2020 16:30:00',
                             text: 'Ciao come stai?',
                             status: 'sent',
-                            dropDown: false,
-                            chevron: false
+                            dropDown: false
                         },
                         {
                             date: '20/03/2020 16:30:55',
                             text: 'Bene grazie! Stasera ci vediamo?',
                             status: 'received',
-                            dropDown: false,
-                            chevron: false
+                            dropDown: false
                         },
                         {
                             date: '20/03/2020 16:35:00',
                             text: 'Mi piacerebbe ma devo andare a fare la spesa.',
                             status: 'sent',
-                            dropDown: false,
-                            chevron: false
+                            dropDown: false
                         }
                     ],
                 },
@@ -73,22 +67,19 @@ var app = new Vue(
                             date: '28/03/2020 10:10:40',
                             text: 'La Marianna va in campagna',
                             status: 'received',
-                            dropDown: false,
-                            chevron: false
+                            dropDown: false
                         },
                         {
                             date: '28/03/2020 10:20:10',
                             text: 'Sicuro di non aver sbagliato chat?',
                             status: 'sent',
-                            dropDown: false,
-                            chevron: false
+                            dropDown: false
                         },
                         {
                             date: '28/03/2020 16:15:22',
                             text: 'Ah scusa!',
                             status: 'received',
-                            dropDown: false,
-                            chevron: false
+                            dropDown: false
                         }
                     ],
                 },
@@ -101,15 +92,13 @@ var app = new Vue(
                             date: '10/01/2020 15:30:55',
                             text: 'Lo sai che ha aperto una nuova pizzeria?',
                             status: 'sent',
-                            dropDown: false,
-                            chevron: false
+                            dropDown: false
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             text: 'Si, ma preferirei andare al cinema',
                             status: 'received',
-                            dropDown: false,
-                            chevron: false
+                            dropDown: false
                         }
                     ],
                 },
@@ -177,15 +166,40 @@ var app = new Vue(
                 
             },
 
-            toggleChevron(message){
-                message.chevron = !message.chevron;
-                
-            },
-
             deleteMessage(index){
 
                 this.contacts[this.currentIndex].messages.splice(index, 1);
         
+            },
+
+            getLastMsg(contact){
+                if (contact.messages.length > 0){
+                    let lastMsgIndex = contact.messages.length - 1;
+                    let lastMsg = contact.messages[lastMsgIndex].text;
+                    let trimmedMsg = lastMsg.substring(0, 30);
+
+                    if(trimmedMsg.length > 29){
+                        return (trimmedMsg + '...');
+                    } else {
+                        return trimmedMsg;
+                    }
+                } else {
+                    return 'nessun messaggio';
+                }
+                
+        
+            },
+
+            getLastDate(contact){
+
+                if (contact.messages.length > 0){
+                    let lastMsgIndex = contact.messages.length - 1;
+                    let lastDate = contact.messages[lastMsgIndex].date;
+    
+                    return lastDate
+                } else {
+                    return '';
+                }
             }
 		}
 

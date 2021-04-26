@@ -73,10 +73,18 @@
                                 <div class="contact-avatar">
                                     <img :src="getAvatar(contact)" alt="">
                                 </div>
-                
-                                <span class="contact-name">
-                                    {{ contact.name }}
-                                </span>
+                                
+                                <div>
+                                    <div class="contact-name">
+                                        {{ contact.name }}
+                                    </div>
+    
+                                    <div class="lastMsg"> {{ getLastMsg(contact) }}</div>
+                                </div>
+                                
+                                <div class="lastMsgDate">
+                                    {{ getLastDate(contact) }}
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -94,7 +102,7 @@
 
                             <div class="current-contact">
                                 <div class="current-name">{{ contacts[currentIndex].name }}</div>
-                                <div class="small-text">Ultimo accesso oggi alle</div>
+                                <div class="small-text">Ultimo accesso oggi alle {{ getLastDate(contacts[currentIndex]) }}</div>
                             </div>
 
                         </div>
@@ -113,11 +121,10 @@
                         <div class="chat-container">
 
                                 <div v-for="(message, index) in contacts[currentIndex].messages"
-                                class="message" :class="getMessageStatus(message)"
-                                @click="toggleChevron(message)">
+                                class="message" :class="getMessageStatus(message)">
                                     <span class="message-text"> {{ message.text }} </span>
                                     <span class="message-time"> {{ message.date }} </span>
-                                    <span class="chevron" v-if="message.chevron" @click="toggleDropdown(message)">
+                                    <span class="chevron" @click="toggleDropdown(message)">
                                         <i class="fas fa-chevron-down"></i>
                                     </span>
                                     <div v-if="message.dropDown" class="dropdown">

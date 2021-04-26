@@ -195,6 +195,7 @@ main{
     display: flex;
     align-items: center;
     padding: 10px;
+    position: relative;
 }
 
 .active{
@@ -219,6 +220,20 @@ main{
 .current-name{
     font-size: 20px;
     font-weight: 700;
+}
+
+.lastMsg{
+    color: #BABCBE;
+    font-size: 15px;
+    padding-left: 20px;
+}
+
+.lastMsgDate{
+    color: #BABCBE;
+    font-size: 13px;
+    position: absolute;
+    top: 7px;
+    right: 7px;
 }
 
 /* text bar  */
@@ -287,6 +302,7 @@ main{
     background-color: white; 
     box-shadow: 1px 3px 10px 5px rgba(0,0,0,0.2);;
     padding: 20px;
+    z-index: 1;
 }
 
 .del-message{
@@ -299,4 +315,9 @@ main{
     right: 10px;
     bottom: 30%;
     color: #6A7376;
+    display: none;
+}
+
+.message:hover .chevron{
+    display: block;
 }
